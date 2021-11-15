@@ -5,6 +5,7 @@
   src: url('/Flix.eot');
 }
   .preview {
+    cursor: move;    
     display: flex;
     position: absolute;
     bottom: 16px;
@@ -14,7 +15,7 @@
     border-radius: 8px;
   }
   video {
-    max-width: 300px;
+    max-width: 160px;
     height: auto;
   }
   body {

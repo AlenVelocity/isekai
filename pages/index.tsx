@@ -26,11 +26,11 @@ class Home extends Component<{}, { isLoading: boolean }> {
     public render() {
         // max width 300px tailwind class is
         return (
-            <div className="flex flex-col items-center justify-center h-screen">
+            <div className="main">
                 <Head />
                 <main>
                     <h1 className="notranslate">
-                        <a href="https://3d.kalidoface.com">
+                        <a href="https://isekai.vecrel.app">
                             <Isekai />
                         </a>
                     </h1>
