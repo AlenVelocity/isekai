@@ -10,6 +10,7 @@ const Head: FC<Partial<Record<'title' | 'description' | 'url' | 'image' | 'type'
             <meta property="og:description" content={description} />
             <meta property="og:url" content={url} />
             <meta property="og:image" content={image} />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
         </H>
     )
 }
