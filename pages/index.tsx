@@ -15,7 +15,7 @@ class Home extends Component<{}, { isLoading: boolean }> {
         const input = document.getElementById('video-in') as HTMLVideoElement
         const kalidokit = new KalidokitController(
             input,
-            '/Kchan.vrm',
+            '/Latifa.vrm',
             document.getElementById('canvas') as HTMLCanvasElement
         )
         await kalidokit.init()
