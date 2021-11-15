@@ -1,9 +1,7 @@
 import { FC } from 'react'
 import H from 'next/head'
 
-type Data = Partial<Record<'title' | 'description' | 'url' | 'image' | 'type' | 'siteName' | 'twitter', string>>
-
-const Head: FC<Data> = ({ title = 'Isekai', description = 'Get Isekai\'d', url, image }) => {
+const Head: FC<Partial<Record<'title' | 'description' | 'url' | 'image' | 'type' | 'siteName' | 'twitter', string>>> = ({ title = 'Isekai', description = "Get Isekai'd", url = 'https://isekai.vercel.app', image = '/image.png' }) => {
     return (
         <H>
             <title>{title}</title>
