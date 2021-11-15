@@ -13,7 +13,6 @@ const { lerp } = Vector
 type TFace = NonNullable<ReturnType<typeof Face['solve']>>
 
 export class KalidokitController {
-
     private loader = new GLTFLoader()
 
     private orbitCamera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 1000)
@@ -39,7 +38,7 @@ export class KalidokitController {
     ) {
         this.renderer.setSize(window.innerWidth, window.innerHeight)
         this.renderer.setPixelRatio(window.devicePixelRatio)
-        document.body.appendChild(this.renderer.domElement);
+        document.body.appendChild(this.renderer.domElement)
 
         this.orbitCamera.position.set(0.0, 1.4, 0.7)
 
@@ -66,25 +65,25 @@ export class KalidokitController {
             }
         })
         holistic.setOptions({
-                modelComplexity: 1,
-                smoothLandmarks: true,
-                minDetectionConfidence: 0.7,
-                minTrackingConfidence: 0.7,
-                refineFaceLandmarks: true
+            modelComplexity: 1,
+            smoothLandmarks: true,
+            minDetectionConfidence: 0.7,
+            minTrackingConfidence: 0.7,
+            refineFaceLandmarks: true
         })
         holistic.onResults((results) => {
-                this.drawResults(results)
-                this.animateVRM(this.currentVRM!, results)
+            this.drawResults(results)
+            this.animateVRM(this.currentVRM!, results)
         })
 
         const camera = new Camera(this.video, {
             onFrame: async () => {
-              await holistic.send({image: this.video})
+                await holistic.send({ image: this.video })
             },
             width: 640,
             height: 480
-          })
-        camera.start();
+        })
+        camera.start()
     }
 
     public update = (delta: number) => {
@@ -92,7 +91,7 @@ export class KalidokitController {
     }
 
     public animate = () => {
-        requestAnimationFrame(this.animate)       
+        requestAnimationFrame(this.animate)
         this.update(this.clock.getDelta())
         this.renderer.render(this.scene, this.orbitCamera)
     }
@@ -225,13 +224,8 @@ export class KalidokitController {
 
             if (leftHandLandmarks) {
                 const riggedHand = Hand.solve(leftHandLandmarks, 'Left')!
-                this.rigRotation(
-                    'LeftHand',
-                    riggedHand.LeftWrist.x,
-                    riggedHand.LeftWrist.y,
-                    riggedPose.LeftHand.z
-                )
-    
+                this.rigRotation('LeftHand', riggedHand.LeftWrist.x, riggedHand.LeftWrist.y, riggedPose.LeftHand.z)
+
                 for (const l of [
                     'LeftThumbProximal',
                     'LeftThumbIntermediate',
@@ -253,18 +247,13 @@ export class KalidokitController {
                     this.rigRotation(l, x, y, z)
                 }
             }
-    
+
             if (rightHandLandmarks) {
                 console.log(rightHandLandmarks)
                 const riggedHand = Hand.solve(rightHandLandmarks, 'Right')!
                 console.log(riggedHand)
-                this.rigRotation(
-                    'RightHand',
-                    riggedHand.RightWrist.x,
-                    riggedHand.RightWrist.y,
-                    riggedPose.RightHand.z
-                )
-    
+                this.rigRotation('RightHand', riggedHand.RightWrist.x, riggedHand.RightWrist.y, riggedPose.RightHand.z)
+
                 for (const l of [
                     'RightThumbProximal',
                     'RightThumbIntermediate',
@@ -287,7 +276,6 @@ export class KalidokitController {
                 }
             }
         }
-
     }
 
     public drawResults = (results: any) => {
