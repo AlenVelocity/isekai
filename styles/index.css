@@ -1,0 +1,29 @@
+
+
+  .preview {
+    display: flex;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    transform: scale(-1, 1);
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  video {
+    max-width: 300px;
+    height: auto;
+  }
+  body {
+    margin: 0;
+  }
+  canvas {
+    display: block;
+  }
+  .canva {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    z-index: 1;
+  }
