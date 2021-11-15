@@ -1,5 +1,9 @@
 
-
+/** Flix font */
+@font-face {
+  font-family: 'Flix';
+  src: url('/Flix.eot');
+}
   .preview {
     display: flex;
     position: absolute;
@@ -40,7 +44,8 @@
   }
 
   h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Flix';
+    font-weight: 700;
     font-size: 32px;
     color: white;
     position: absolute;
@@ -64,7 +69,7 @@
   a:hover,
   a:visited:hover,
   a:link:hover {
-    color: #13A3F3;
+    color: #4ada45;
     cursor: pointer;
   }
 
