@@ -31,7 +31,7 @@ class Home extends Component<{}, { isLoading: boolean; progress: number }> {
 
                 {/** flex grid with 1x2*/}
                 <div className="bg-red-300 py-24 flex flex-wrap items-center justify-center gap-4">
-                    <ModelCard name="Latifa" />
+                    <ModelCard name="Kchan" />
 
                     <ModelCard name="Latifa" />
                 </div>
