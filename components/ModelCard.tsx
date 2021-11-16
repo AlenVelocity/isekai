@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { FC } from 'react'
 import router from 'next/router'
 
@@ -6,7 +7,6 @@ const ModelCard: FC<{ name: string }> = ({ name }) => {
         router.push(`/go/${name}`)
     }
 
-    //make a square image cover and the button under it use tailwind classes
     return (
         <div className="bg-red-200 rounded-lg shadow-2xl w-3/4 max-w-xs">
             <img src={`/${name}-Thumb.jpeg`} alt="avatar" className="rounded-t-lg h-60 w-full object-cover" />
