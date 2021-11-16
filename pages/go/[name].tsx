@@ -42,7 +42,9 @@ class Home extends Component<Props, { isLoading: boolean; progress: number }> {
                 <main>
                     <Nav />
                     {this.state.isLoading ? <Loading progress={this.state.progress ?? 0} /> : ''}
-                    <div className="cursor-move flex absolute overflow-hidden rounded-lg transform scale-x-[-1]">
+                    <div 
+                    /* make the div moveable and resizeable using tailwind */
+                    className="absolute inset-0 flex justify-center items-center cursor-move overflow-hidden rounded-lg transform scale-x-[-1]">
                         <video
                             id="video-in"
                             className="h-auto max-w-xs bg-gray-100"

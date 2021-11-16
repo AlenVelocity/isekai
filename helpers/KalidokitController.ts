@@ -174,7 +174,6 @@ export class KalidokitController {
             leftHandLandmarks: rightHandLandmarks
         }: any
     ) => {
-        if (!vrm) return void null
         if (faceLandmarks) {
             const riggedFace = Face.solve(faceLandmarks, {
                 runtime: 'mediapipe',

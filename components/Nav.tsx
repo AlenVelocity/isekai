@@ -13,13 +13,6 @@ const Nav: FC = () => {
                         <a className="text-gray-900 no-underline hover:no-underline font-bold text-xl">
                             <Isekai />
                         </a>
-
-                        <a className="w-2 h-2">
-                            <img
-                                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-                                alt="github logo"
-                            />
-                        </a>
                     </div>
                 </div>
             </nav>
