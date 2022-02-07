@@ -16,7 +16,7 @@
     "@mediapipe/holistic": "^0.5.1635989137",
     "@pixiv/three-vrm": "^0.6.7",
     "@vladmandic/face-api": "^1.5.7",
-    "kalidokit": "github:alensaito1/kalidokit#migrate-typescript",
+    "kalidokit": "^1.1.5",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",

@@ -52,8 +52,8 @@ export class KalidokitController {
         this.animate()
     }
 
-    public init = async () => {
-        const gltf = await this.load()
+    public init = async (onProgress: (event: ProgressEvent<EventTarget>) => void) => {
+        const gltf = await this.load(onProgress)
         VRMUtils.removeUnnecessaryJoints(gltf.scene)
         const vrm = await VRM.from(gltf)
         this.scene.add(vrm.scene)
@@ -96,7 +96,7 @@ export class KalidokitController {
         this.renderer.render(this.scene, this.orbitCamera)
     }
 
-    public load() {
+    private load(onProgress: (event: ProgressEvent<EventTarget>) => void) {
         this.loader.crossOrigin = 'anonymous'
         return new Promise<GLTF>((resolve, reject) =>
             this.loader.load(
@@ -105,9 +105,7 @@ export class KalidokitController {
                     resolve(gltf)
                 },
 
-                (progress) => {
-                    console.log(progress)
-                },
+                onProgress,
 
                 (error) => {
                     reject(error)

@@ -1,53 +1,35 @@
 /* eslint-disable @next/next/no-img-element */
 import { Component } from 'react'
-import { KalidokitController } from '../helpers/KalidokitController'
 import Head from '../components/Head'
 import Isekai from '../components/Isekai'
-class Home extends Component<{}, { isLoading: boolean }> {
+import ModelCard from '../components/ModelCard'
+
+class Home extends Component<{}, { isLoading: boolean; progress: number }> {
     constructor(props: any) {
         super(props)
         this.state = {
-            isLoading: true
+            isLoading: true,
+            progress: 0
         }
-        this.setState({ isLoading: true })
     }
-    public async componentDidMount() {
-        const input = document.getElementById('video-in') as HTMLVideoElement
-        const kalidokit = new KalidokitController(
-            input,
-            '/Latifa.vrm',
-            document.getElementById('canvas') as HTMLCanvasElement
-        )
-        await kalidokit.init()
-        this.setState({ isLoading: false })
-        this.setState({ isLoading: false })
-    }
+    public async componentDidMount() {}
 
     public render() {
-        // max width 300px tailwind class is
         return (
-            <div className="main">
+            <div>
                 <Head />
-                <main>
-                    <h1 className="notranslate">
-                        <a href="https://isekai.vecrel.app">
-                            <Isekai />
-                        </a>
-                    </h1>
-                    <nav>
-                        <a href="https://github.com/alensaito1/isekai">
-                            <img
-                                alt="github"
-                                src="https://cdn.glitch.me/447b6603-7eae-4da6-957d-73ee30c8e731%2Fgithub.png?v=1635133310517"
-                            />
-                        </a>
-                    </nav>
-                    {this.state.isLoading ? <div className="loader">Loading...</div> : ''}
-                    <div className="preview">
-                        <video id="video-in" className="input_video" width="1280px" height="720px"></video>
-                        <canvas id="canvas" className="canva"></canvas>
+                <div className="bg-red-200 py-24 flex flex-wrap items-center justify-center">
+                    <div className="w-full max-w-screen-xl mx-auto px-4 py-8 items-center justify-center">
+                        <p className="text-2xl text-black bottom-10 font-bold text-center">
+                            Choose a model to get Isekai&apos;d as
+                        </p>
                     </div>
-                </main>
+                </div>
+
+                {/** flex grid with 1x2*/}
+                <div className="bg-red-300 py-24 flex flex-wrap items-center justify-center gap-4">
+                    <ModelCard name="Latifa" />
+                </div>
             </div>
         )
     }
