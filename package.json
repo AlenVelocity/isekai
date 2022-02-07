@@ -1,7 +1,6 @@
 {
   "name": "isekai",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -18,6 +17,7 @@
     "@vladmandic/face-api": "^1.5.7",
     "kalidokit": "^1.1.5",
     "next": "11.1.2",
+    "next-transpile-modules": "^9.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "three": "^0.133.1"
