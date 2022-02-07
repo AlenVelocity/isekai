@@ -42,8 +42,7 @@ class Home extends Component<Props, { isLoading: boolean; progress: number }> {
                 <main>
                     <Nav />
                     {this.state.isLoading ? <Loading progress={this.state.progress ?? 0} /> : ''}
-                    <div 
-                    className="cursor-move flex absolute overflow-hidden rounded-lg transform scale-x-[-1] bottom-4 right-4">
+                    <div className="cursor-move flex absolute overflow-hidden rounded-lg transform scale-x-[-1] bottom-4 right-4">
                         <video
                             id="video-in"
                             className="h-auto max-w-xs bg-gray-100"

@@ -19,9 +19,6 @@ class Home extends Component<{}, { isLoading: boolean; progress: number }> {
             <div>
                 <Head />
                 <div className="bg-red-200 py-24 flex flex-wrap items-center justify-center">
-                    <h2 className="text-6xl text-black top-0 font-extrabold">
-                        <Isekai />
-                    </h2>
                     <div className="w-full max-w-screen-xl mx-auto px-4 py-8 items-center justify-center">
                         <p className="text-2xl text-black bottom-10 font-bold text-center">
                             Choose a model to get Isekai&apos;d as
@@ -31,8 +28,6 @@ class Home extends Component<{}, { isLoading: boolean; progress: number }> {
 
                 {/** flex grid with 1x2*/}
                 <div className="bg-red-300 py-24 flex flex-wrap items-center justify-center gap-4">
-                    <ModelCard name="Kchan" />
-
                     <ModelCard name="Latifa" />
                 </div>
             </div>
